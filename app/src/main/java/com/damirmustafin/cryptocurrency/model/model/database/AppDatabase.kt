@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.damirmustafin.cryptocurrency.viewmodel.Api.pojo.CoinPriceInfo
 
 @Database(entities = [CoinPriceInfo::class], version = 1, exportSchema = false)
-abstract class AppDatabase private constructor(): RoomDatabase() {
+abstract class AppDatabase protected constructor(): RoomDatabase() {
 
     abstract fun coinPriceInfoDao():CoinPriceInfoDao
 

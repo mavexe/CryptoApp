@@ -1,6 +1,5 @@
 package com.damirmustafin.cryptocurrency.view
 
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -16,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProvider(this).get(CoinViewModel::class.java)
-        viewModel.LoadData()
     }
 
 }
