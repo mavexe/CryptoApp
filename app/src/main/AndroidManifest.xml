@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.damirmustafin.cryptocurrency">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <application
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cryptocurrency"
         tools:targetApi="31">
+        <activity
+            android:name=".view.CoinDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".view.CoinPriceListActivity"
             android:exported="true">
