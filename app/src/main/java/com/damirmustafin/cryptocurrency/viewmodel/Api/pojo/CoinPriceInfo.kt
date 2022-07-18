@@ -3,10 +3,10 @@ package com.damirmustafin.cryptocurrency.viewmodel.Api.pojo
 import androidx.annotation.NonNull
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.damirmustafin.cryptocurrency.viewmodel.Utils.convertTimeStampToTime
 import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
-
 
 
 @Entity(tableName = "Full_Price_List")
@@ -18,7 +18,6 @@ data class CoinPriceInfo (
     @SerializedName("MARKET")
     @Expose
      val market: String?,
-
     @PrimaryKey
     @NonNull
     @SerializedName("FROMSYMBOL")
@@ -36,10 +35,6 @@ data class CoinPriceInfo (
     @SerializedName("PRICE")
     @Expose
      val price: Double?,
-
-    @SerializedName("LASTUPDATE")
-    @Expose
-     val lastupdate: Int?,
 
     @SerializedName("MEDIAN")
     @Expose
@@ -88,5 +83,19 @@ data class CoinPriceInfo (
 
     @SerializedName("IMAGEURL")
     @Expose
-     val imageurl: String?
-    )
+     val imageurl: String?,
+
+    @SerializedName("LASTUPDATE")
+    @Expose
+   var lastUpdate: Long?
+){
+ fun getFormatedTime():String{
+  return convertTimeStampToTime(lastUpdate)
+ }
+
+ fun getFullImageURL(): String {
+  val a = String
+  if(imageurl != null) {val a = "https://cryptocompare.com${imageurl}"}
+  return a.toString()
+}
+}
